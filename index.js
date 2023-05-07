@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
   //fecha
-  let diaSem = document.querySelector(".diaSemana");
-  let dia = document.querySelector(".dia");
-  let mes = document.querySelector(".mes");
-  let anio = document.querySelector(".anio");
+  const diaSem = document.querySelector(".diaSemana");
+  const dia = document.querySelector(".dia");
+  const mes = document.querySelector(".mes");
+  const anio = document.querySelector(".anio");
 
   //hora
   let horas = document.querySelector(".hours");
