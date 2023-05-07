@@ -1,15 +1,15 @@
 window.addEventListener("DOMContentLoaded", () => {
   //fecha
-  const diaSem = document.querySelector(".diaSemana");
-  const dia = document.querySelector(".dia");
-  const mes = document.querySelector(".mes");
-  const anio = document.querySelector(".anio");
+  let diaSem = document.querySelector(".diaSemana");
+  let dia = document.querySelector(".dia");
+  let mes = document.querySelector(".mes");
+  let anio = document.querySelector(".anio");
 
   //hora
-  const horas = document.querySelector(".hours");
-  const minutos = document.querySelector(".minutes");
-  const amPm = document.getElementById("am");
-  const segundos = document.getElementById("secunds");
+  let horas = document.querySelector(".hours");
+  let minutos = document.querySelector(".minutes");
+  let pAMPM = document.getElementById("am");
+  let segundos = document.getElementById("secunds");
 
   function currentTime() {
     let fecha = new Date();
@@ -19,8 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let anioActual = fecha.getFullYear();
     let horaActual = fecha.getHours();
     let minutosActuales = fecha.getMinutes();
-    let ampm;
     let segundosActuales = fecha.getSeconds();
+    let ampm;
 
     //fecha.
     let dias = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
@@ -33,20 +33,20 @@ window.addEventListener("DOMContentLoaded", () => {
     //hora
     if (horaActual>=12) {
         horaActual=horaActual-12;
-        ampm='PM'
+        ampm="PM";
     }else{
-        amPm='AM'
+        ampm="AM";
     }
-    if (horaActual===0) {
+    if (horaActual==0) {
         horaActual=12;
     }
     horas.textContent=horaActual;
-    amPm.textContent=ampm;
+    pAMPM.textContent=ampm;
     if (minutosActuales<10) {
-        minutosActuales='0'+minutosActuales;
+        minutosActuales="0"+minutosActuales;
     }
     if (segundosActuales<10) {
-        segundosActuales='0'+segundosActuales;
+        segundosActuales="0"+segundosActuales;
     }
     minutos.textContent=minutosActuales;
     segundos.textContent=segundosActuales;
@@ -55,5 +55,5 @@ window.addEventListener("DOMContentLoaded", () => {
   setInterval(()=>{
       currentTime();
 
-  }), 1000;
+  }),1000;
 });
